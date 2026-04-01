@@ -1,65 +1,177 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { ChevronDown } from 'lucide-react';
+import Link from 'next/link';
+import CtaBanner from './components/CtaBanner';
+import Logo from './components/Logo';
+import SectionHeading from './components/SectionHeading';
+import { company } from './lib/company';
+import { capabilities } from './lib/capabilities';
+import { truckBuilds } from './lib/truckBuilds';
+import { homePage } from './lib/home';
+import { useScrollReveal } from './hooks/useScrollReveal';
+
+function Home() {
+  const { ref: productsRef, isVisible: productsVisible } = useScrollReveal();
+  const { ref: capabilitiesRef, isVisible: capabilitiesVisible } = useScrollReveal();
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      {/* Full-bleed hero with storefront background */}
+      <section className="relative min-h-screen overflow-hidden">
+        {/* Background image with Ken Burns */}
+        <div
+          className="absolute inset-0 hero-bg-animate bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${homePage.hero.media})` }}
+        >
+          <div className="absolute inset-0 bg-graphite-950/70" />
+        </div>
+
+        {/* Logo — upper left */}
+        <div
+          className="relative z-10 px-8 pt-6 opacity-0 animate-float-in-down sm:px-12 sm:pt-8"
+          style={{ animationDelay: '200ms' }}
+        >
+          <Logo linked={false} />
+        </div>
+
+        {/* Main text — centered on image */}
+        <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-8 text-center sm:px-12">
+          <div className="max-w-4xl space-y-6">
+            <h1
+              className="text-5xl uppercase leading-[0.94] tracking-[0.05em] text-white opacity-0 animate-fade-up sm:text-7xl lg:text-8xl"
+              style={{ animationDelay: '450ms' }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              {homePage.hero.title}
+            </h1>
+            <p
+              className="text-xl text-graphite-200 opacity-0 animate-fade-up sm:text-2xl lg:text-3xl"
+              style={{ animationDelay: '600ms' }}
             >
-              Learning
-            </a>{" "}
-            center.
+              {homePage.hero.description}
+            </p>
+          </div>
+          <div
+            className="mt-10 flex flex-col gap-4 opacity-0 animate-fade-up sm:flex-row"
+            style={{ animationDelay: '750ms' }}
+          >
+            <Link className="btn-primary" href="/contact">
+              {company.requestQuoteLabel}
+            </Link>
+            <Link className="btn-secondary" href="/products">
+              View Our Builds
+            </Link>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-pulse-down"
+          style={{ animationDelay: '1200ms' }}
+        >
+          <ChevronDown className="h-7 w-7 text-white/50" />
+        </div>
+
+        {/* Bottom fade */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-graphite-950 to-transparent" />
+      </section>
+
+      {/* Intro text — upper middle of page */}
+      <section className="bg-graphite-950 py-16 sm:py-20">
+        <div className="shell">
+          <p className="max-w-3xl mx-auto text-justify text-lg leading-8 text-white sm:text-xl">
+            {homePage.hero.intro}
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </section>
+
+      {/* Products grid */}
+      <section className="section-space pt-0">
+        <div className="shell space-y-10">
+          <SectionHeading
+            description={homePage.truckBuildsDescription}
+            eyebrow="Truck Builds"
+            title={homePage.truckBuildsTitle}
+          />
+
+          <div
+            ref={productsRef}
+            className={`grid gap-5 transition-all duration-400 md:grid-cols-2 xl:grid-cols-3 ${
+              productsVisible ? 'opacity-100 translate-y-0 animate-reveal-up' : 'opacity-0 translate-y-8'
+            }`}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            {truckBuilds.map((item) => (
+              <Link
+                key={item.slug}
+                href={`/products/${item.slug}`}
+                className="group relative overflow-hidden rounded-[1.8rem] border border-graphite-800 bg-graphite-950"
+                style={{ minHeight: '380px' }}
+              >
+                <img
+                  alt={item.alt}
+                  className="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-400 group-hover:scale-105 group-hover:opacity-100"
+                  loading="lazy"
+                  src={item.image}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <h3 className="text-xl uppercase tracking-[0.06em] text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-7 text-graphite-300">
+                    {item.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="section-space border-y border-white/10 bg-black/30" id="more-than-trucks">
+        <div className="shell space-y-10">
+          <SectionHeading
+            description={homePage.moreThanTrucksDescription}
+            eyebrow="Capabilities"
+            title={homePage.moreThanTrucksTitle}
+          />
+
+          <div
+            ref={capabilitiesRef}
+            className={`grid gap-6 transition-all duration-400 md:grid-cols-2 xl:grid-cols-3 ${
+              capabilitiesVisible ? 'opacity-100 translate-y-0 animate-reveal-up' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            {capabilities.map((item) => (
+              <article key={item.title} className="panel group relative min-h-[320px] overflow-hidden">
+                <img
+                  alt={item.alt}
+                  className="absolute inset-0 h-full w-full object-cover opacity-60 transition-opacity duration-400 group-hover:opacity-80"
+                  loading="lazy"
+                  src={item.image}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-graphite-950 via-graphite-950/60 to-transparent" />
+                <div className="relative flex h-full flex-col justify-end p-6">
+                  <p className="eyebrow">{item.title}</p>
+                  <p className="mt-2 text-sm leading-6 text-graphite-200">{item.description}</p>
+                  {item.to ? (
+                    <Link
+                      className="mt-4 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-amber-400 transition hover:text-amber-300"
+                      href={item.to}
+                    >
+                      Learn more
+                    </Link>
+                  ) : null}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CtaBanner title={homePage.cta} />
+    </>
   );
 }
+
+export default Home;
