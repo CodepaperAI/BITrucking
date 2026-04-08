@@ -7,8 +7,8 @@ function FlatbedTruck() {
       <PageHero
         eyebrow="Truck Builds"
         description="Durable flatbed trucks built to maximize cargo capabilities in rugged environments."
-        media="/bi-assets/images/flatbed-side.png"
-        mediaAlt="Custom flatbed truck built for cargo and rugged environments"
+        media="/bi-assets/images/flatbed-corner-shot.png"
+        mediaAlt="Custom flatbed truck with rear corner view built for rugged jobsite work"
         mediaNote="Flatbed Truck"
         primaryAction={{ label: 'Request a Quote', to: '/contact' }}
         secondaryAction={{ label: 'View All Builds', to: '/products' }}

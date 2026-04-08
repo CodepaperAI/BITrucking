@@ -10,8 +10,8 @@ function PowderCoating() {
       <PageHero
         description="Commercial and industrial finishing support for fabricated equipment, truck accessories, and oversized metal components."
         eyebrow="Powder Coating"
-        media="/bi-assets/images/BI-2.jpg"
-        mediaAlt="BI Truck & Body powder coating facility in Madison, Georgia"
+        media="/bi-assets/images/powder-coating-main.jpg"
+        mediaAlt="Technician applying powder coating in the BI Truck & Body finishing booth"
         mediaNote="Commercial finishing"
         primaryAction={{ label: company.requestQuoteLabel, to: '/contact' }}
         secondaryAction={{ label: 'Call Now', href: company.phoneHref }}
@@ -61,10 +61,10 @@ function PowderCoating() {
 
             <article className="panel-muted relative min-h-[400px] overflow-hidden">
               <img
-                alt="Powder coating process in an industrial booth"
+                alt="Technician applying powder coating to fabricated metal equipment in an industrial booth"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
-                src="/bi-assets/images/BI-21.jpg"
+                src="/bi-assets/images/powder-coating-main.jpg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10" />
               <div className="absolute inset-0 flex h-full flex-col justify-end p-8">

@@ -7,8 +7,8 @@ function SpecialtyBuild() {
       <PageHero
         eyebrow="Truck Builds"
         description="Custom truck builds designed to support unique equipment and specialized operations, including solar power set ups."
-        media="/bi-assets/images/BI-6.jpg"
-        mediaAlt="Custom utility truck build for contractors and field crews"
+        media="/bi-assets/images/specialty-build.jpg"
+        mediaAlt="Custom specialty trailer build for specialized equipment transport"
         mediaNote="Specialty Build"
         primaryAction={{ label: 'Request a Quote', to: '/contact' }}
         secondaryAction={{ label: 'View All Builds', to: '/products' }}

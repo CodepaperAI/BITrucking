@@ -1,6 +1,5 @@
 import { Mail, MapPin, PhoneCall } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
-import PageHero from '../components/PageHero';
 import SectionHeading from '../components/SectionHeading';
 import { company } from '../lib/company';
 import { contactPage } from '../lib/contact';
@@ -8,18 +7,7 @@ import { contactPage } from '../lib/contact';
 function Contact() {
   return (
     <>
-      <PageHero
-        description={contactPage.lead}
-        eyebrow="Contact"
-        media="/bi-assets/images/BI-2.jpg"
-        mediaAlt="BI Truck & Body custom work trucks and fleet builds in Madison, Georgia"
-        mediaNote="Madison, Georgia"
-        primaryAction={{ label: 'Call Now', href: company.phoneHref }}
-        secondaryAction={{ label: 'Scroll to Form', to: '/contact#contact-form' }}
-        title={contactPage.title}
-      />
-
-      <section className="section-space">
+      <section className="section-space pt-32 sm:pt-36">
         <div className="shell grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="space-y-6">
             <SectionHeading

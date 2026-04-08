@@ -7,7 +7,7 @@ export const company = {
   phoneHref: 'tel:+17064742732',
   email: 'fleet@bitruckbody.com',
   emailHref: 'mailto:fleet@bitruckbody.com',
-  address: '1291 Lions Club Road Sweet 100, Madison, GA 30650',
+  address: '1291 Lions Club Road Suite 100, Madison, GA 30650',
   location: 'Madison, Georgia',
   footerLine:
     'Durable custom work truck builds, powder coating, and fleet-ready solutions from Madison, Georgia.',

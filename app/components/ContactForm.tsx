@@ -53,7 +53,7 @@ function ContactForm() {
         <p className="eyebrow">Project Details</p>
         <h2 className="text-3xl uppercase tracking-[0.05em] text-white">Tell us about your build</h2>
         <p className="text-sm leading-7 text-graphite-300">
-          Use the form below, or call {company.phoneDisplay} if you&apos;d rather talk through the scope with our team.
+          Please give us a call, or fill out the form below, and we will get back to you immediately.
         </p>
       </div>
 

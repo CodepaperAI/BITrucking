@@ -11,14 +11,14 @@ export const capabilities: Capability[] = [
     title: 'Powder Coating',
     description: 'Commercial and industrial powder coating services.',
     to: '/powder-coating',
-    image: '/bi-assets/images/BI-5.jpg',
-    alt: 'Industrial powder coating process on metal components',
+    image: '/bi-assets/images/powder-coating-main.jpg',
+    alt: 'Technician applying powder coating to fabricated metal equipment',
   },
   {
     title: 'Custom Decals',
     description: 'Custom wraps with our partner, B.I. Print Works.',
-    image: '/bi-assets/images/BI-12.jpg',
-    alt: 'Custom fleet decals and wraps',
+    image: '/bi-assets/images/custom-decals-collage.jpg',
+    alt: 'Custom decals and wraps produced with B.I. Print Works',
   },
   {
     title: 'Solar Framing',
@@ -29,14 +29,14 @@ export const capabilities: Capability[] = [
   {
     title: 'Custom Designs',
     description: 'Truck bodies built for your unique operation.',
-    image: '/bi-assets/images/BI-19.jpg',
-    alt: 'Custom truck body design and fabrication',
+    image: '/bi-assets/images/specialty-build.jpg',
+    alt: 'Custom specialty fabrication build for unique truck body applications',
   },
   {
     title: 'Experience',
     description: 'Our leadership team brings more than 40 years of experience.',
-    image: '/bi-assets/images/BI-1.jpg',
-    alt: 'BI Truck & Body facility and team in Madison, Georgia',
+    image: '/bi-assets/images/experience-photo.jpg',
+    alt: 'BI Truck & Body facility frontage with completed truck build in Madison, Georgia',
   },
   {
     title: 'Tight Timelines',

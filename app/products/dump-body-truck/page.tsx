@@ -7,8 +7,8 @@ function DumpBodyTruck() {
       <PageHero
         eyebrow="Truck Builds"
         description="Dump bodies designed for infrastructure, construction, and heavy-duty work."
-        media="/bi-assets/images/BI-24.jpg"
-        mediaAlt="Heavy-duty dump body truck for construction and infrastructure work"
+        media="/bi-assets/images/dump-rear-view.png"
+        mediaAlt="Heavy-duty dump body truck rear view for construction and infrastructure work"
         mediaNote="Dump Body Truck"
         primaryAction={{ label: 'Request a Quote', to: '/contact' }}
         secondaryAction={{ label: 'View All Builds', to: '/products' }}

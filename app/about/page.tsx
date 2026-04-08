@@ -11,8 +11,8 @@ function About() {
       <PageHero
         description="A locally owned truck-body company focused on rugged, practical builds for crews and fleets that rely on their vehicles every day."
         eyebrow="About"
-        media="/bi-assets/images/BI-16.jpg"
-        mediaAlt="BI Truck & Body facility and custom truck builds in Madison, Georgia"
+        media="/bi-assets/images/tb-campus.jpg"
+        mediaAlt="Aerial view of the BI Truck & Body campus in Madison, Georgia"
         mediaNote="Madison, Georgia"
         primaryAction={{ label: company.requestQuoteLabel, to: '/contact' }}
         secondaryAction={{ label: 'Contact', to: '/contact' }}
@@ -44,10 +44,10 @@ function About() {
 
             <article className="panel-muted relative min-h-[360px] overflow-hidden">
               <img
-                alt="BI Truck &amp; Body team and facility in Madison, Georgia"
+                alt="BI Truck &amp; Body facility frontage with completed truck build in Madison, Georgia"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
-                src="/bi-assets/images/BI-1.jpg"
+                src="/bi-assets/images/experience-photo.jpg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/40 to-black/10" />
               <div className="relative flex h-full flex-col justify-end p-6 sm:p-8">
@@ -56,7 +56,7 @@ function About() {
                   Madison, Georgia
                 </h2>
                 <p className="mt-4 text-sm leading-7 text-graphite-200">
-                  BI Truck &amp; Body facility and team in Madison, Georgia.
+                  BI Truck &amp; Body storefront and completed work truck in Madison, Georgia.
                 </p>
               </div>
             </article>
