@@ -1,5 +1,15 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHero from '../../components/PageHero';
+import { buildMetadata } from '../../lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'Flatbed Truck Builds',
+  description: 'Durable flatbed trucks built to maximize cargo capabilities in rugged environments.',
+  path: '/products/flatbed-truck',
+  image: '/bi-assets/images/flatbed-corner-shot.png',
+  keywords: ['flatbed truck builds', 'custom flatbed truck', 'commercial flatbed bodies'],
+});
 
 function FlatbedTruck() {
   return (

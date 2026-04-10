@@ -4,26 +4,31 @@ import { company } from '@/app/lib/company';
 
 interface LogoProps {
   linked?: boolean;
+  size?: 'header' | 'footer';
 }
 
-function Logo({ linked = true }: LogoProps) {
+function Logo({ linked = true, size = 'header' }: LogoProps) {
+  const sizeClasses =
+    size === 'footer'
+      ? 'w-[180px] sm:w-[220px]'
+      : 'w-[132px] sm:w-[152px] lg:w-[164px] xl:w-[176px]';
+
   const content = (
-    <div className="flex items-center gap-3 sm:gap-4">
+    <div className={`${sizeClasses} shrink-0`}>
       <Image
-        aria-hidden="true"
         src="/bi-assets/images/bi-logo.png"
-        alt=""
-        width={64}
-        height={64}
-        sizes="(min-width: 640px) 56px, 52px"
-        className="h-[52px] w-[52px] object-contain sm:h-14 sm:w-14"
+        alt={company.name}
+        width={720}
+        height={384}
+        priority={linked}
+        quality={100}
+        sizes={
+          size === 'footer'
+            ? '(min-width: 640px) 220px, 180px'
+            : '(min-width: 1280px) 176px, (min-width: 1024px) 164px, (min-width: 640px) 152px, 132px'
+        }
+        className="h-auto w-full object-contain"
       />
-      <div className="space-y-1">
-        <p className="text-xl uppercase tracking-[0.08em] text-white sm:text-2xl">BI Truck & Body</p>
-        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-graphite-400 sm:text-xs">
-          Custom Work Trucks
-        </p>
-      </div>
     </div>
   );
 

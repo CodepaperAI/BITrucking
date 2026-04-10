@@ -1,8 +1,23 @@
+import type { Metadata } from 'next';
 import CtaBanner from '../components/CtaBanner';
 import PageHero from '../components/PageHero';
 import SectionHeading from '../components/SectionHeading';
 import { company } from '../lib/company';
 import { powderCoatingPage } from '../lib/powderCoating';
+import { buildMetadata } from '../lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'Commercial and Industrial Powder Coating Services',
+  description: powderCoatingPage.intro[0],
+  path: '/powder-coating',
+  image: '/bi-assets/images/powder-coating-main.jpg',
+  keywords: [
+    'powder coating georgia',
+    'commercial powder coating',
+    'industrial powder coating',
+    'oversized powder coating',
+  ],
+});
 
 function PowderCoating() {
   return (

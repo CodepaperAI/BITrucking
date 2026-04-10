@@ -1,5 +1,15 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHero from '../../components/PageHero';
+import { buildMetadata } from '../../lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'Service Van Builds',
+  description: 'Van builds for contractors and delivery fleets requiring organized mobile workspaces.',
+  path: '/products/service-van',
+  image: '/bi-assets/images/BI-15.jpg',
+  keywords: ['service van builds', 'commercial service vans', 'fleet van upfitting'],
+});
 
 function ServiceVan() {
   return (

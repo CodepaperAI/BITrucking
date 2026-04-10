@@ -1,5 +1,15 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHero from '../../components/PageHero';
+import { buildMetadata } from '../../lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'Crane-Equipped Utility Truck Builds',
+  description: 'Utility trucks equipped with lifting capability for demanding field operations.',
+  path: '/products/crane-equipped-utility-truck',
+  image: '/bi-assets/images/BI-11.jpg',
+  keywords: ['crane truck builds', 'crane-equipped utility truck', 'lifting utility trucks'],
+});
 
 function CraneEquippedUtilityTruck() {
   return (

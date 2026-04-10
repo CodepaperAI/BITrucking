@@ -1,5 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHero from '../../components/PageHero';
+import { buildMetadata } from '../../lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'Specialty Truck Builds',
+  description:
+    'Custom truck builds designed to support unique equipment and specialized operations.',
+  path: '/products/specialty-build',
+  image: '/bi-assets/images/specialty-build.jpg',
+  keywords: ['specialty truck builds', 'custom fleet builds', 'specialized work trucks'],
+});
 
 function SpecialtyBuild() {
   return (

@@ -10,7 +10,7 @@ function Footer() {
       <div className="shell py-16 sm:py-18">
         <div className="grid gap-10 lg:grid-cols-[1fr_0.65fr_1fr_1fr]">
           <div className="space-y-6">
-            <Logo linked={false} />
+            <Logo linked={false} size="footer" />
             <p className="max-w-xl text-base leading-8 text-graphite-300">{company.footerLine}</p>
             {/* Newsletter form */}
             <div className="mt-4 space-y-3">

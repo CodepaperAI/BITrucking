@@ -1,6 +1,16 @@
-import SectionHeading from '../components/SectionHeading';
+import type { Metadata } from 'next';
 import { truckBuilds } from '../lib/truckBuilds';
 import { homePage } from '../lib/home';
+import { buildMetadata } from '../lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'Truck Builds Gallery',
+  description: homePage.truckBuildsDescription,
+  path: '/truck-builds',
+  image: '/bi-assets/images/BI-27.jpg',
+  keywords: ['truck builds gallery', 'custom truck body gallery', 'work truck examples'],
+  noIndex: true,
+});
 
 function TruckBuilds() {
   return (

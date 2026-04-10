@@ -1,5 +1,15 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHero from '../../components/PageHero';
+import { buildMetadata } from '../../lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'Dump Body Truck Builds',
+  description: 'Dump bodies designed for infrastructure, construction, and heavy-duty work.',
+  path: '/products/dump-body-truck',
+  image: '/bi-assets/images/dump-rear-view.png',
+  keywords: ['dump body truck builds', 'custom dump trucks', 'construction truck bodies'],
+});
 
 function DumpBodyTruck() {
   return (

@@ -1,6 +1,17 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHero from '../components/PageHero';
 import { truckBuilds } from '../lib/truckBuilds';
+import { buildMetadata } from '../lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'Truck Builds',
+  description:
+    'Explore custom work truck builds for contractors, utilities, municipalities, and fleet operators.',
+  path: '/products',
+  image: '/bi-assets/images/BI-27.jpg',
+  keywords: ['truck builds', 'work truck bodies', 'fleet truck builds', 'utility trucks'],
+});
 
 function Products() {
   return (

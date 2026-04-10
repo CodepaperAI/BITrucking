@@ -1,5 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHero from '../../components/PageHero';
+import { buildMetadata } from '../../lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'Utility Truck Builds',
+  description:
+    'Service body trucks designed for contractors, utilities, municipal services, and field crews.',
+  path: '/products/utility-truck',
+  image: '/bi-assets/images/BI-6.jpg',
+  keywords: ['utility truck builds', 'service body trucks', 'contractor utility trucks'],
+});
 
 function UtilityTruck() {
   return (

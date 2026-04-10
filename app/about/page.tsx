@@ -1,9 +1,19 @@
+import type { Metadata } from 'next';
 import { Check } from 'lucide-react';
 import CtaBanner from '../components/CtaBanner';
 import PageHero from '../components/PageHero';
 import SectionHeading from '../components/SectionHeading';
 import { company } from '../lib/company';
 import { aboutPage } from '../lib/about';
+import { buildMetadata } from '../lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'About BI Truck & Body',
+  description: aboutPage.paragraphs[0],
+  path: '/about',
+  image: '/bi-assets/images/tb-campus.jpg',
+  keywords: ['about BI Truck and Body', 'truck body company georgia', 'madison ga truck builder'],
+});
 
 function About() {
   return (

@@ -1,8 +1,18 @@
+import type { Metadata } from 'next';
 import { Mail, MapPin, PhoneCall } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 import SectionHeading from '../components/SectionHeading';
 import { company } from '../lib/company';
 import { contactPage } from '../lib/contact';
+import { buildMetadata } from '../lib/seo';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'Contact BI Truck & Body',
+  description: contactPage.body,
+  path: '/contact',
+  image: '/bi-assets/images/storefront.jpg',
+  keywords: ['contact truck body builder', 'request truck build quote', 'madison ga truck body'],
+});
 
 function Contact() {
   return (
